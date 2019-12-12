@@ -1,12 +1,16 @@
 package UserInterface;
+import Squad.*;
+import Player.*;
 import java.util.Scanner;
 
 public class UserInterface {
     private Scanner reader;
+    private Squad squad;
     private int user_input;
 
-    public UserInterface(Scanner reader){
+    public UserInterface(Scanner reader, Squad squad){
         this.reader = reader;
+        this.squad = squad;
     }
 
     public void start() {
@@ -46,7 +50,31 @@ public class UserInterface {
     }
 
     public void showPlayersMenu(){
-        // showAllPlayers();
+        while(true){
+            System.out.println("Menu de Jogadores");
+            System.out.println("1 - Adicionar jogador");
+            System.out.println("2 - Remover jogador");
+            System.out.println("3 - Mostrar todos os jogadores");
+            System.out.println("4 - Sair");
+
+            user_input = readInput("O que deseja?");
+
+            switch(user_input) {
+                case 1:
+                    Player new_player = new Player("Leonardo", 21, 900, "Atacante");
+                    squad.addPlayer(new_player);
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    squad.showAllPlayers();
+                    break;
+                case 4:
+                    return;
+                default:
+                    System.out.println("Opcao invalida!");
+            }
+        }
     }
 
     public void showStaffMenu(){

@@ -1,17 +1,16 @@
 package com.company;
-import Person.*;
-import Player.*;
+import UserInterface.*;
 import Squad.*;
-import Staff.*;
-import UserInterface.UserInterface;
-
 import java.util.Scanner;
+
 
 public class Main {
 
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
-        UserInterface userInterface = new UserInterface(reader);
+        Squad squad = new Squad();
+
+        UserInterface userInterface = new UserInterface(reader, squad);
         userInterface.start();
     }
 }

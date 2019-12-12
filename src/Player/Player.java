@@ -27,4 +27,15 @@ public class Player extends Person {
     public double getValue() {
         return value;
     }
+
+    public void showPlayer() {
+        System.out.println("Nome: " + this.getName());
+        System.out.print("Idade: " + this.getAge() + " | ");
+        System.out.print("Salario: " + this.getWage() + " | ");
+        System.out.print("Posicao: " + this.getPosition() + " | ");
+        System.out.print("Gols: " + this.getGoals() + " | ");
+        System.out.print("Assistencias: " + this.getAssists() + " | ");
+        System.out.println("Valor de mercado: " + this.getValue());
+        System.out.println();
+    }
 }
