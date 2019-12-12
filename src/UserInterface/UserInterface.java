@@ -1,16 +1,21 @@
 package UserInterface;
-import Squad.*;
+
 import Player.*;
+import Squad.*;
+import Staff.*;
+import Backroom.*;
 import java.util.Scanner;
 
 public class UserInterface {
     private Scanner reader;
     private Squad squad;
+    private Backroom backroom;
     private int user_input;
 
-    public UserInterface(Scanner reader, Squad squad){
+    public UserInterface(Scanner reader, Squad squad, Backroom backroom){
         this.reader = reader;
         this.squad = squad;
+        this.backroom = backroom;
     }
 
     public void start() {
@@ -44,8 +49,9 @@ public class UserInterface {
     }
 
     public int readInput(String question) {
-        System.out.print(question);
+        System.out.print(question + " ");
         int input = reader.nextInt();
+        System.out.println();
         return input;
     }
 
@@ -66,6 +72,7 @@ public class UserInterface {
                     squad.addPlayer(new_player);
                     break;
                 case 2:
+
                     Integer remove_player_id = reader.nextInt();
                     squad.deletePlayer(remove_player_id);
                     break;
@@ -85,7 +92,38 @@ public class UserInterface {
     }
 
     public void showStaffMenu(){
-        // showAllStaff();
+        while(true){
+            System.out.println("Menu de Staff");
+            System.out.println("1 - Adicionar staff");
+            System.out.println("2 - Remover staff");
+            System.out.println("3 - Procurar staff");
+            System.out.println("4 - Mostrar todo o staff");
+            System.out.println("5 - Sair");
+
+            user_input = readInput("O que deseja?");
+
+            switch(user_input) {
+                case 1:
+                    Staff new_staff = new Staff("Chris Coleman", 21, 900, "Tecnico");
+                    backroom.addStaff(new_staff);
+                    break;
+                case 2:
+                    Integer remove_staff_id = reader.nextInt();
+                    backroom.deleteStaff(remove_staff_id);
+                    break;
+                case 3:
+                    Integer search_staff_id = reader.nextInt();
+                    backroom.showStaff(search_staff_id);
+                    break;
+                case 4:
+                    backroom.showAllStaff();
+                    break;
+                case 5:
+                    return;
+                default:
+                    System.out.println("Opcao invalida!");
+            }
+        }
     }
 
     public void showReportsMenu(){

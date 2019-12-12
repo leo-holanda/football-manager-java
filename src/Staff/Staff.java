@@ -18,7 +18,7 @@ public class Staff extends Person {
         System.out.println("Nome: " + this.getName());
         System.out.print("Idade: " + this.getAge() + " | ");
         System.out.print("Salario: " + this.getWage() + " | ");
-        System.out.print("Posicao: " + this.getRole() + " | ");
+        System.out.println("Funcao: " + this.getRole() + " | ");
         System.out.println();
     }
 }

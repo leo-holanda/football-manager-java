@@ -1,13 +1,11 @@
 package Squad;
-import Player.*;
-import Staff.*;
 
+import Player.*;
 import java.util.HashMap;
 import java.util.Random;
 
 public class Squad {
     HashMap<Integer, Player> players = new HashMap<Integer, Player>();
-    HashMap<Integer, Staff> staff = new HashMap<Integer, Staff>();
 
     public void addPlayer(Player player) {
         players.put(generateRandomNumber(), player);
