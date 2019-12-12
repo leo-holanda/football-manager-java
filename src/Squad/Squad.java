@@ -2,14 +2,15 @@ package Squad;
 import Player.*;
 import Staff.*;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Random;
 
 public class Squad {
-    ArrayList<Player> playersList = new ArrayList<Player>();
-    ArrayList<Staff> staffList = new ArrayList<Staff>();
+    HashMap<Integer, Player> players = new HashMap<Integer, Player>();
+    HashMap<Integer, Staff> staff = new HashMap<Integer, Staff>();
 
     public void addPlayer(Player player) {
-        playersList.add(player);
+        players.put(generateRandomNumber(), player);
     }
 
     public void deletePlayer(int id) {
@@ -21,8 +22,18 @@ public class Squad {
     }
 
     public void showAllPlayers() {
-        for (Player player : playersList) {
-            player.showPlayer();
+        for (Integer key : players.keySet()) {
+            System.out.print("ID : " + key + " | ");
+            players.get(key).showPlayer();
         }
+    }
+
+    private Integer generateRandomNumber() {
+        Random random = new Random();
+        Integer random_value = random.nextInt(999);
+        while (players.containsKey(random_value)) {
+            random_value = random.nextInt(999);
+        }
+        return random_value;
     }
 }
