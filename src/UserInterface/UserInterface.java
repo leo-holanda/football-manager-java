@@ -54,8 +54,9 @@ public class UserInterface {
             System.out.println("Menu de Jogadores");
             System.out.println("1 - Adicionar jogador");
             System.out.println("2 - Remover jogador");
-            System.out.println("3 - Mostrar todos os jogadores");
-            System.out.println("4 - Sair");
+            System.out.println("3 - Procurar jogador");
+            System.out.println("4 - Mostrar todos os jogadores");
+            System.out.println("5 - Sair");
 
             user_input = readInput("O que deseja?");
 
@@ -65,11 +66,17 @@ public class UserInterface {
                     squad.addPlayer(new_player);
                     break;
                 case 2:
+                    Integer remove_player_id = reader.nextInt();
+                    squad.deletePlayer(remove_player_id);
                     break;
                 case 3:
-                    squad.showAllPlayers();
+                    Integer search_player_id = reader.nextInt();
+                    squad.showPlayer(search_player_id);
                     break;
                 case 4:
+                    squad.showAllPlayers();
+                    break;
+                case 5:
                     return;
                 default:
                     System.out.println("Opcao invalida!");

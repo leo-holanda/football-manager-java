@@ -13,12 +13,16 @@ public class Squad {
         players.put(generateRandomNumber(), player);
     }
 
-    public void deletePlayer(int id) {
-
+    public void deletePlayer(Integer id) {
+        if (players.containsKey(id)) {
+            players.remove(id);
+        }
     }
 
-    public void showPlayer(Player player) {
-
+    public void showPlayer(int id) {
+        if (players.containsKey(id)) {
+            players.get(id).showPlayer();
+        }
     }
 
     public void showAllPlayers() {
