@@ -14,6 +14,10 @@ public class Backroom {
     public void deleteStaff(Integer id) {
         if (staff.containsKey(id)) {
             staff.remove(id);
+            System.out.println("O staff foi removido com sucesso!");
+        }
+        else {
+            System.out.println("O staff nao foi encontrado!");
         }
     }
 
@@ -21,9 +25,13 @@ public class Backroom {
         if (staff.containsKey(id)) {
             staff.get(id).showStaff();
         }
+        else {
+            System.out.println("O staff nao foi encontrado!");
+        }
     }
 
     public void showAllStaff() {
+        System.out.println();
         for (Integer key : staff.keySet()) {
             System.out.print("ID : " + key + " | ");
             staff.get(key).showStaff();

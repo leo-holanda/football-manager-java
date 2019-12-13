@@ -19,7 +19,7 @@ public class UserInterface {
         System.out.println("Bem-vindo ao Football Manager!");
 
         while(true){
-            System.out.println("Menu Principal");
+            System.out.println("\n" + "Menu Principal");
             System.out.println("1 - Menu de jogadores");
             System.out.println("2 - Menu de staff");
             System.out.println("3 - Relatorios");
@@ -45,7 +45,7 @@ public class UserInterface {
 
     public void showPlayersMenu(){
         while(true){
-            System.out.println("Menu de Jogadores");
+            System.out.println("\n" + "Menu de Jogadores");
             System.out.println("1 - Adicionar jogador");
             System.out.println("2 - Remover jogador");
             System.out.println("3 - Procurar jogador");
@@ -58,12 +58,12 @@ public class UserInterface {
                     squad.addPlayer(new_player);
                     break;
                 case 2:
-                  //  Integer remove_player_id = reader.nextInt();
-                 //   squad.deletePlayer(remove_player_id);
+                    int remove_player_id = Helper.readInput("Digite o ID do jogador que deseja remover: ");
+                    squad.deletePlayer(remove_player_id);
                     break;
                 case 3:
-                 //   Integer search_player_id = reader.nextInt();
-                  //  squad.showPlayer(search_player_id);
+                    int search_player_id = Helper.readInput("Digite o ID do jogador que deseja procurar: ");
+                    squad.showPlayer(search_player_id);
                     break;
                 case 4:
                     squad.showAllPlayers();
@@ -78,7 +78,7 @@ public class UserInterface {
 
     public void showStaffMenu(){
         while(true){
-            System.out.println("Menu de Staff");
+            System.out.println("\n" + "Menu de Staff");
             System.out.println("1 - Adicionar staff");
             System.out.println("2 - Remover staff");
             System.out.println("3 - Procurar staff");
@@ -91,12 +91,12 @@ public class UserInterface {
                     backroom.addStaff(new_staff);
                     break;
                 case 2:
-                  //  Integer remove_staff_id = reader.nextInt();
-                  //  backroom.deleteStaff(remove_staff_id);
+                    int remove_staff_id = Helper.readInput("Digite o ID do staff que deseja remover: ");
+                    backroom.deleteStaff(remove_staff_id);
                     break;
                 case 3:
-                 //   Integer search_staff_id = reader.nextInt();
-                   // backroom.showStaff(search_staff_id);
+                    int search_staff_id = Helper.readInput("Digite o ID do staff que deseja procurar: ");
+                    backroom.showStaff(search_staff_id);
                     break;
                 case 4:
                     backroom.showAllStaff();

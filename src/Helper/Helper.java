@@ -8,7 +8,7 @@ public class Helper {
     static int input;
 
     public static int readInput(String question) {
-        System.out.print(question + " ");
+        System.out.print("\n" + question + " ");
 
         while(true) {
             try {

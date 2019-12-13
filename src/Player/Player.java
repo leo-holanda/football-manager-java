@@ -36,6 +36,5 @@ public class Player extends Person {
         System.out.print("Gols: " + this.getGoals() + " | ");
         System.out.print("Assistencias: " + this.getAssists() + " | ");
         System.out.println("Valor de mercado: " + this.getValue());
-        System.out.println();
     }
 }
