@@ -90,7 +90,7 @@ public class UserInterface {
             switch(Helper.readInput("O que deseja?")) {
                 case 1:
                     Contract new_contract = new Contract(1, "integral", 900);
-                    Staff new_staff = new Staff("Chris Coleman", 21, new_contract, "Tecnico");
+                    Staff new_staff = new Staff("Chris Coleman", 21, new_contract, "Tecnico", "Continental Pro");
                     backroom.add(new_staff);
                     break;
                 case 2:
