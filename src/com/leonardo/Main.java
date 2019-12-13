@@ -2,8 +2,6 @@ package com.leonardo;
 import UserInterface.*;
 import Squad.*;
 import Backroom.*;
-import java.util.Scanner;
-
 
 public class Main {
 

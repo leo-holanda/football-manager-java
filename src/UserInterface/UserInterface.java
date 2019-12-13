@@ -1,5 +1,6 @@
 package UserInterface;
 
+import Contract.Contract;
 import Player.*;
 import Squad.*;
 import Staff.*;
@@ -54,7 +55,8 @@ public class UserInterface {
 
             switch(Helper.readInput("O que deseja?")) {
                 case 1:
-                    Player new_player = new Player("Leonardo", 21, 900, "Atacante");
+                    Contract new_contract = new Contract(1, "integral", 900);
+                    Player new_player = new Player("Leonardo", 21, new_contract, "Atacante");
                     squad.add(new_player);
                     break;
                 case 2:
@@ -87,7 +89,8 @@ public class UserInterface {
 
             switch(Helper.readInput("O que deseja?")) {
                 case 1:
-                    Staff new_staff = new Staff("Chris Coleman", 21, 900, "Tecnico");
+                    Contract new_contract = new Contract(1, "integral", 900);
+                    Staff new_staff = new Staff("Chris Coleman", 21, new_contract, "Tecnico");
                     backroom.add(new_staff);
                     break;
                 case 2:

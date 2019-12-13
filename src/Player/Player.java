@@ -1,4 +1,5 @@
 package Player;
+import Contract.Contract;
 import Person.*;
 
 public class Player extends Person {
@@ -7,31 +8,33 @@ public class Player extends Person {
     private int assists;
     private double value;
 
-    public Player(String name, int age, double wage, String position) {
-        super(name, age, wage);
+    public Player(String name, int age, Contract contract, String position) {
+        super(name, age, contract);
         this.position = position;
     }
 
     public String getPosition() {
-        return position;
+        return this.position;
     }
 
     public int getGoals() {
-        return goals;
+        return this.goals;
     }
 
     public int getAssists() {
-        return assists;
+        return this.assists;
     }
 
     public double getValue() {
-        return value;
+        return this.value;
     }
 
     public void showPlayer() {
         System.out.println("Nome: " + this.getName());
         System.out.print("Idade: " + this.getAge() + " | ");
         System.out.print("Salario: " + this.getWage() + " | ");
+        System.out.print("Tipo de contrato: " + this.getContractType() + " | ");
+        System.out.print("Duracao de contrato: " + this.getContractLength() + " | ");
         System.out.print("Posicao: " + this.getPosition() + " | ");
         System.out.print("Gols: " + this.getGoals() + " | ");
         System.out.print("Assistencias: " + this.getAssists() + " | ");
