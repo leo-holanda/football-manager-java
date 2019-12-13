@@ -1,17 +1,21 @@
 package Backroom;
 
+import Player.Player;
 import Staff.*;
 import java.util.HashMap;
 import java.util.Random;
+import Action.*;
 
-public class Backroom {
+public class Backroom implements Action<Staff>{
     HashMap<Integer, Staff> staff = new HashMap<Integer, Staff>();
 
-    public void addStaff(Staff new_staff) {
+    @Override
+    public void add(Staff new_staff) {
         staff.put(generateRandomNumber(), new_staff);
     }
 
-    public void deleteStaff(Integer id) {
+    @Override
+    public void delete(int id) {
         if (staff.containsKey(id)) {
             staff.remove(id);
             System.out.println("O staff foi removido com sucesso!");
@@ -21,7 +25,8 @@ public class Backroom {
         }
     }
 
-    public void showStaff(int id) {
+    @Override
+    public void show(int id) {
         if (staff.containsKey(id)) {
             staff.get(id).showStaff();
         }
@@ -30,7 +35,8 @@ public class Backroom {
         }
     }
 
-    public void showAllStaff() {
+    @Override
+    public void showAll() {
         System.out.println();
         for (Integer key : staff.keySet()) {
             System.out.print("ID : " + key + " | ");
@@ -46,4 +52,5 @@ public class Backroom {
         }
         return random_value;
     }
+
 }

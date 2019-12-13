@@ -55,18 +55,18 @@ public class UserInterface {
             switch(Helper.readInput("O que deseja?")) {
                 case 1:
                     Player new_player = new Player("Leonardo", 21, 900, "Atacante");
-                    squad.addPlayer(new_player);
+                    squad.add(new_player);
                     break;
                 case 2:
                     int remove_player_id = Helper.readInput("Digite o ID do jogador que deseja remover: ");
-                    squad.deletePlayer(remove_player_id);
+                    squad.delete(remove_player_id);
                     break;
                 case 3:
                     int search_player_id = Helper.readInput("Digite o ID do jogador que deseja procurar: ");
-                    squad.showPlayer(search_player_id);
+                    squad.show(search_player_id);
                     break;
                 case 4:
-                    squad.showAllPlayers();
+                    squad.showAll();
                     break;
                 case 5:
                     return;
@@ -88,18 +88,18 @@ public class UserInterface {
             switch(Helper.readInput("O que deseja?")) {
                 case 1:
                     Staff new_staff = new Staff("Chris Coleman", 21, 900, "Tecnico");
-                    backroom.addStaff(new_staff);
+                    backroom.add(new_staff);
                     break;
                 case 2:
                     int remove_staff_id = Helper.readInput("Digite o ID do staff que deseja remover: ");
-                    backroom.deleteStaff(remove_staff_id);
+                    backroom.delete(remove_staff_id);
                     break;
                 case 3:
                     int search_staff_id = Helper.readInput("Digite o ID do staff que deseja procurar: ");
-                    backroom.showStaff(search_staff_id);
+                    backroom.show(search_staff_id);
                     break;
                 case 4:
-                    backroom.showAllStaff();
+                    backroom.showAll();
                     break;
                 case 5:
                     return;
