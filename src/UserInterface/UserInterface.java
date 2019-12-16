@@ -2,6 +2,8 @@ package UserInterface;
 
 import Contract.Contract;
 import Player.*;
+import Schedule.*;
+import Fixture.*;
 import Squad.*;
 import Staff.*;
 import Backroom.*;
@@ -10,10 +12,12 @@ import Helper.*;
 public class UserInterface {
     private Squad squad;
     private Backroom backroom;
+    private Schedule schedule;
 
-    public UserInterface(Squad squad, Backroom backroom){
+    public UserInterface(Squad squad, Backroom backroom, Schedule schedule){
         this.squad = squad;
         this.backroom = backroom;
+        this.schedule = schedule;
     }
 
     public void start() {
@@ -23,7 +27,7 @@ public class UserInterface {
             System.out.println("\n" + "Menu Principal");
             System.out.println("1 - Menu do elenco");
             System.out.println("2 - Menu de staff");
-            System.out.println("3 - Relatorios");
+            System.out.println("3 - Calendario");
             System.out.println("4 - Sair");
 
             switch(Helper.readIntInput("O que deseja?")) {
@@ -34,7 +38,7 @@ public class UserInterface {
                     showBackroomMenu();
                     break;
                 case 3:
-                    showReportsMenu();
+                    showScheduleMenu();
                     break;
                 case 4:
                     return;
@@ -206,7 +210,34 @@ public class UserInterface {
         }
     }
 
-    public void showReportsMenu(){
-        // Mostrar opcoes de relatorio
+    public void showScheduleMenu(){
+        Object fixture = new Object();
+
+        while(true){
+            System.out.println("\n" + "Menu do Calendario");
+            System.out.println("1 - Mostrar todas as partidas");
+            System.out.println("2 - Procurar partida");
+            System.out.println("3 - Sair");
+
+            switch(Helper.readIntInput("O que deseja?")) {
+                case 1:
+                    schedule.showAll();
+                    break;
+                case 2:
+                    fixture = schedule.find(21);
+
+                    if(fixture instanceof Fixture){
+                        ((Fixture) fixture).show();
+                    }
+                    else{
+                        System.out.println("A partida nao foi encontrada!");
+                    }
+                    break;
+                case 3:
+                    return;
+                default:
+                    System.out.println("Opcao invalida!");
+            }
+        }
     }
 }
