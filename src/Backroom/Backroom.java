@@ -43,6 +43,10 @@ public class Backroom implements Action<Staff>{
         }
     }
 
+    public Staff get(int id){
+        return staff.get(id);
+    }
+
     private Integer generateRandomNumber() {
         Random random = new Random();
         Integer random_value = random.nextInt(999);

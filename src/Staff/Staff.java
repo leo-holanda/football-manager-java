@@ -28,4 +28,12 @@ public class Staff extends Person {
         System.out.print("Funcao: " + this.getRole() + " | ");
         System.out.println("Qualificacao: " + this.getQualification());
     }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public void setQualification(String qualification) {
+        this.qualification = qualification;
+    }
 }

@@ -165,7 +165,45 @@ public class UserInterface {
     }
 
     public void showStaffMenu(int id) {
+        while(true){
+            System.out.println("\n" + "Menu de Staff");
+            System.out.println("1 - Editar nome");
+            System.out.println("2 - Editar idade");
+            System.out.println("3 - Editar funcao");
+            System.out.println("4 - Editar qualificacao");
+            System.out.println("5 - Editar duracao de contrato");
+            System.out.println("6 - Editar tipo de contrato");
+            System.out.println("7 - Editar salario");
+            System.out.println("8 - Sair");
 
+            switch(Helper.readIntInput("O que deseja?")) {
+                case 1:
+                    backroom.get(id).setName(Helper.readTextInput("Digite o nome correto do staff: "));
+                    break;
+                case 2:
+                    backroom.get(id).setAge(Helper.readIntInput("Digite a idade correta do staff: "));
+                    break;
+                case 3:
+                    backroom.get(id).setRole(Helper.readTextInput("Digite a nova funcao do staff: "));
+                    break;
+                case 4:
+                    backroom.get(id).setQualification(Helper.readTextInput("Digite a nova qualificacao do staff: "));
+                    break;
+                case 5:
+                    backroom.get(id).getContract().setLength(Helper.readIntInput("Digite a nova duracao do contrato do staff: "));
+                    break;
+                case 6:
+                    backroom.get(id).getContract().setType(Helper.readTextInput("Digite o novo tipo de contrato do staff: "));
+                    break;
+                case 7:
+                    backroom.get(id).getContract().setWage(Helper.readIntInput("Digite o novo salario do staff: "));
+                    break;
+                case 8:
+                    return;
+                default:
+                    System.out.println("Opcao invalida!");
+            }
+        }
     }
 
     public void showReportsMenu(){
