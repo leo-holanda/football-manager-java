@@ -22,9 +22,9 @@ public class Staff extends Person {
     public void showStaff() {
         System.out.println("Nome: " + this.getName());
         System.out.print("Idade: " + this.getAge() + " | ");
-        System.out.print("Salario: " + this.getWage() + " | ");
-        System.out.print("Tipo de contrato: " + this.getContractType() + " | ");
-        System.out.print("Duracao de contrato: " + this.getContractLength() + " | ");
+        System.out.print("Salario: " + this.getContract().getWage() + " | ");
+        System.out.print("Tipo de contrato: " + this.getContract().getType() + " | ");
+        System.out.print("Duracao de contrato: " + this.getContract().getLength() + " | ");
         System.out.print("Funcao: " + this.getRole() + " | ");
         System.out.println("Qualificacao: " + this.getQualification());
     }

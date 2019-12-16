@@ -32,12 +32,28 @@ public class Player extends Person {
     public void showPlayer() {
         System.out.println("Nome: " + this.getName());
         System.out.print("Idade: " + this.getAge() + " | ");
-        System.out.print("Salario: " + this.getWage() + " | ");
-        System.out.print("Tipo de contrato: " + this.getContractType() + " | ");
-        System.out.print("Duracao de contrato: " + this.getContractLength() + " | ");
+        System.out.print("Salario: " + this.getContract().getWage() + " | ");
+        System.out.print("Tipo de contrato: " + this.getContract().getType() + " | ");
+        System.out.print("Duracao de contrato: " + this.getContract().getLength() + " | ");
         System.out.print("Posicao: " + this.getPosition() + " | ");
         System.out.print("Gols: " + this.getGoals() + " | ");
         System.out.print("Assistencias: " + this.getAssists() + " | ");
         System.out.println("Valor de mercado: " + this.getValue());
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public void setGoals(int goals) {
+        this.goals = goals;
+    }
+
+    public void setAssists(int assists) {
+        this.assists = assists;
+    }
+
+    public void setValue(double value) {
+        this.value = value;
     }
 }

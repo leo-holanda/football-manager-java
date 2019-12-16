@@ -43,6 +43,10 @@ public class Squad implements Action<Player>{
         }
     }
 
+    public Player get(int id) {
+        return players.get(id);
+    }
+
     private Integer generateRandomNumber() {
         Random random = new Random();
         Integer random_value = random.nextInt(999);

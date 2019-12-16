@@ -5,16 +5,33 @@ import java.util.Scanner;
 
 public class Helper {
     static Scanner reader = new Scanner(System.in);
-    static int input;
 
-    public static int readInput(String question) {
+    public static int readIntInput(String question) {
+        int input;
         System.out.print("\n" + question + " ");
 
         while(true) {
             try {
-               return input = reader.nextInt();
+               input = reader.nextInt();
+               reader.nextLine();
+               return input;
             }catch (InputMismatchException e) {
-                System.out.print("Apenas numeros sao validos! Digite novamente: ");
+                System.out.print("Entrada invalida! Digite novamente: ");
+                reader.next();
+            }
+        }
+    }
+
+    public static String readTextInput(String question) {
+        String text_input;
+        System.out.print("\n" + question + " ");
+
+        while(true) {
+            try {
+                text_input = reader.nextLine();
+                return text_input;
+            }catch (InputMismatchException e) {
+                System.out.print("Entrada invalida! Digite novamente: ");
                 reader.next();
             }
         }

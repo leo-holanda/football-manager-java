@@ -23,9 +23,11 @@ public class Person {
         return this.contract;
     }
 
-    public double getWage() { return this.getContract().getWage(); }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-    public String getContractType() {return this.getContract().getType(); }
-
-    public int getContractLength() {return this.getContract().getLength(); }
+    public void setAge(int age) {
+        this.age = age;
+    }
 }

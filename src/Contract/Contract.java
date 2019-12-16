@@ -22,4 +22,16 @@ public class Contract {
     public double getWage() {
         return this.wage;
     }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setWage(double wage) {
+        this.wage = wage;
+    }
 }
