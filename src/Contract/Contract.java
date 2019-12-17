@@ -15,23 +15,15 @@ public class Contract {
         return this.length;
     }
 
-    public String getType() {
-        return this.type;
-    }
+    public String getType() { return this.type; }
 
     public double getWage() {
         return this.wage;
     }
 
-    public void setLength(int length) {
-        this.length = length;
-    }
+    public void setLength(int length) { this.length = length; }
 
-    public void setType(String type) {
-        this.type = type;
-    }
+    public void setType(String type) { this.type = type; }
 
-    public void setWage(double wage) {
-        this.wage = wage;
-    }
+    public void setWage(double wage) { this.wage = wage; }
 }

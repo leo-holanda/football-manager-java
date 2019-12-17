@@ -65,8 +65,7 @@ public class Helper {
         double wage = readDoubleInput("Digite o salario do jogador: ");
 
         Contract new_contract = new Contract(length,type,wage);
-        Player new_player = new Player(name, age, new_contract, position);
-        return new_player;
+        return new Player(name, age, new_contract, position);
     }
 
     public static Staff readStaffInput(){
@@ -79,7 +78,6 @@ public class Helper {
         double wage = readDoubleInput("Digite o salario do staff: ");
 
         Contract new_contract = new Contract(length,type,wage);
-        Staff new_staff = new Staff(name, age, new_contract, role, qualification);
-        return new_staff;
+        return new Staff(name, age, new_contract, role, qualification);
     }
 }

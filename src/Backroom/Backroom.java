@@ -26,12 +26,14 @@ public class Backroom implements Action<Staff>{
     }
 
     @Override
-    public void show(int id) {
+    public boolean show(int id) {
         if (staff.containsKey(id)) {
             staff.get(id).showStaff();
+            return true;
         }
         else {
             System.out.println("O staff nao foi encontrado!");
+            return false;
         }
     }
 
@@ -45,9 +47,7 @@ public class Backroom implements Action<Staff>{
     }
 
     @Override
-    public Staff get(int id) {
-        return staff.get(id);
-    }
+    public Staff get(int id) { return staff.get(id); }
 
     @Override
     public Person searchByName(String name) {

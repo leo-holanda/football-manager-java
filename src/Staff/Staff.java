@@ -19,6 +19,10 @@ public class Staff extends Person {
 
     public String getQualification() { return qualification; }
 
+    public void setRole(String role) { this.role = role; }
+
+    public void setQualification(String qualification) { this.qualification = qualification; }
+
     public void showStaff() {
         System.out.println("Nome: " + this.getName());
         System.out.print("Idade: " + this.getAge() + " | ");
@@ -27,13 +31,5 @@ public class Staff extends Person {
         System.out.print("Duracao de contrato: " + this.getContract().getLength() + " | ");
         System.out.print("Funcao: " + this.getRole() + " | ");
         System.out.println("Qualificacao: " + this.getQualification());
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public void setQualification(String qualification) {
-        this.qualification = qualification;
     }
 }

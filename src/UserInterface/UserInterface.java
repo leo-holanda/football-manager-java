@@ -1,6 +1,5 @@
 package UserInterface;
 
-import Contract.Contract;
 import Person.Person;
 import Player.*;
 import Squad.*;
@@ -65,8 +64,7 @@ public class UserInterface {
                     break;
                 case 3:
                     int search_player_id = Helper.readIntInput("Digite o ID do jogador que deseja procurar: ");
-                    squad.show(search_player_id);
-                    showPlayerMenu(search_player_id);
+                    if(squad.show(search_player_id)) { showPlayerMenu(search_player_id);}
                     break;
                 case 4:
                     squad.showAll();
@@ -99,8 +97,7 @@ public class UserInterface {
                     break;
                 case 3:
                     int search_staff_id = Helper.readIntInput("Digite o ID do staff que deseja procurar: ");
-                    backroom.show(search_staff_id);
-                    showStaffMenu(search_staff_id);
+                    if(backroom.show(search_staff_id)) { showStaffMenu(search_staff_id);}
                     break;
                 case 4:
                     backroom.showAll();
@@ -119,13 +116,12 @@ public class UserInterface {
             System.out.println("1 - Editar nome");
             System.out.println("2 - Editar idade");
             System.out.println("3 - Editar posicao");
-            System.out.println("4 - Editar valor de mercado");
-            System.out.println("5 - Editar numero de gols");
-            System.out.println("6 - Editar numero de assistencias");
-            System.out.println("7 - Editar duracao de contrato");
-            System.out.println("8 - Editar tipo de contrato");
-            System.out.println("9 - Editar salario");
-            System.out.println("10 - Sair");
+            System.out.println("4 - Editar numero de gols");
+            System.out.println("5 - Editar numero de assistencias");
+            System.out.println("6 - Editar duracao de contrato");
+            System.out.println("7 - Editar tipo de contrato");
+            System.out.println("8 - Editar salario");
+            System.out.println("9 - Sair");
 
             switch(Helper.readIntInput("O que deseja?")) {
                 case 1:
@@ -138,24 +134,21 @@ public class UserInterface {
                     squad.get(id).setPosition(Helper.readTextInput("Digite a nova posicao do jogador: "));
                     break;
                 case 4:
-                    squad.get(id).setValue(Helper.readIntInput("Digite o novo valor de mercado do jogador: "));
-                    break;
-                case 5:
                     squad.get(id).setGoals(Helper.readIntInput("Digite a quantidade de gols do jogador: "));
                     break;
-                case 6:
+                case 5:
                     squad.get(id).setAssists(Helper.readIntInput("Digite a quantidade de assistencias do jogador: "));
                     break;
-                case 7:
+                case 6:
                     squad.get(id).getContract().setLength(Helper.readIntInput("Digite a nova duracao do contrato do jogador: "));
                     break;
-                case 8:
+                case 7:
                     squad.get(id).getContract().setType(Helper.readTextInput("Digite o novo tipo de contrato do jogador: "));
                     break;
-                case 9:
-                    squad.get(id).getContract().setWage(Helper.readIntInput("Digite o novo salario do jogador: "));
+                case 8:
+                    squad.get(id).getContract().setWage(Helper.readDoubleInput("Digite o novo salario do jogador: "));
                     break;
-                case 10:
+                case 9:
                     return;
                 default:
                     System.out.println("Opcao invalida!");
@@ -195,7 +188,7 @@ public class UserInterface {
                     backroom.get(id).getContract().setType(Helper.readTextInput("Digite o novo tipo de contrato do staff: "));
                     break;
                 case 7:
-                    backroom.get(id).getContract().setWage(Helper.readIntInput("Digite o novo salario do staff: "));
+                    backroom.get(id).getContract().setWage(Helper.readDoubleInput("Digite o novo salario do staff: "));
                     break;
                 case 8:
                     return;

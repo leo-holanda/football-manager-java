@@ -3,9 +3,9 @@ package Person;
 import Contract.*;
 
 public class Person {
-    private String name;
-    private int age;
-    private Contract contract;
+    protected String name;
+    protected int age;
+    protected Contract contract;
 
     public Person(String name, int age, Contract contract) {
         this.name = name;

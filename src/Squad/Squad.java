@@ -26,12 +26,14 @@ public class Squad implements Action<Player>{
     }
 
     @Override
-    public void show(int id) {
+    public boolean show(int id) {
         if (players.containsKey(id)) {
             players.get(id).showPlayer();
+            return true;
         }
         else {
             System.out.println("O jogador nao foi encontrado!");
+            return false;
         }
     }
 
@@ -45,9 +47,7 @@ public class Squad implements Action<Player>{
     }
 
     @Override
-    public Player get(int id) {
-        return players.get(id);
-    }
+    public Player get(int id) { return players.get(id); }
 
     @Override
     public Person searchByName(String name) {
