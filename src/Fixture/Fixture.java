@@ -34,10 +34,4 @@ public class Fixture {
     public void setStadium(String stadium) {
         this.stadium = stadium;
     }
-
-    public void show(){
-        System.out.print("\n" + "Adversario: " + this.getOpposition() + " | ");
-        System.out.print("Data: " + this.getDate() + " | ");
-        System.out.println("Estadio: " + this.getStadium());
-    }
 }
