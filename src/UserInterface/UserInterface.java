@@ -56,8 +56,7 @@ public class UserInterface {
 
             switch(Helper.readIntInput("O que deseja?")) {
                 case 1:
-                    Contract new_contract = new Contract(1, "integral", 900);
-                    Player new_player = new Player("Leonardo", 21, new_contract, "Atacante");
+                    Player new_player = Helper.readPlayerInput();
                     squad.add(new_player);
                     break;
                 case 2:
@@ -91,8 +90,7 @@ public class UserInterface {
 
             switch(Helper.readIntInput("O que deseja?")) {
                 case 1:
-                    Contract new_contract = new Contract(1, "integral", 900);
-                    Staff new_staff = new Staff("Chris Coleman", 21, new_contract, "Tecnico", "Continental Pro");
+                    Staff new_staff = Helper.readStaffInput();
                     backroom.add(new_staff);
                     break;
                 case 2:

@@ -1,5 +1,9 @@
 package Helper;
 
+import Contract.Contract;
+import Player.Player;
+import Staff.Staff;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -35,5 +39,47 @@ public class Helper {
                 reader.next();
             }
         }
+    }
+
+    public static Double readDoubleInput(String question) {
+        double double_input;
+        System.out.print("\n" + question + " ");
+
+        while(true) {
+            try {
+                double_input = reader.nextDouble();
+                return double_input;
+            }catch (InputMismatchException e) {
+                System.out.print("Entrada invalida! Digite novamente: ");
+                reader.next();
+            }
+        }
+    }
+
+    public static Player readPlayerInput(){
+        String name = readTextInput("Digite o nome do jogador: ");
+        int age = readIntInput("Digite a idade do jogador: ");
+        String position = readTextInput("Digite a posicao preferida do jogador: ");
+        int length = readIntInput("Digite a duracao do contrato do jogador: ");
+        String type = readTextInput("Digite o tipo de contrato do jogador: ");
+        double wage = readDoubleInput("Digite o salario do jogador: ");
+
+        Contract new_contract = new Contract(length,type,wage);
+        Player new_player = new Player(name, age, new_contract, position);
+        return new_player;
+    }
+
+    public static Staff readStaffInput(){
+        String name = readTextInput("Digite o nome do staff: ");
+        int age = readIntInput("Digite a idade do staff: ");
+        String role = readTextInput("Digite a funcao do staff: ");
+        String qualification = readTextInput("Digite a qualificacao do staff: ");
+        int length = readIntInput("Digite a duracao do contrato do staff: ");
+        String type = readTextInput("Digite o tipo de contrato do staff: ");
+        double wage = readDoubleInput("Digite o salario do staff: ");
+
+        Contract new_contract = new Contract(length,type,wage);
+        Staff new_staff = new Staff(name, age, new_contract, role, qualification);
+        return new_staff;
     }
 }

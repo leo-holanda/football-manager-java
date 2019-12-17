@@ -68,5 +68,4 @@ public class Backroom implements Action<Staff>{
         }
         return random_value;
     }
-
 }
