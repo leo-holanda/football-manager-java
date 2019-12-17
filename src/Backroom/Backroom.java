@@ -1,5 +1,6 @@
 package Backroom;
 
+import Person.Person;
 import Staff.*;
 import java.util.HashMap;
 import java.util.Random;
@@ -43,13 +44,25 @@ public class Backroom implements Action<Staff>{
         }
     }
 
-    public Staff get(int id){
+    @Override
+    public Staff get(int id) {
         return staff.get(id);
     }
 
-    private Integer generateRandomNumber() {
+    @Override
+    public Person searchByName(String name) {
+        for (Person person : staff.values()) {
+            if (person.getName().contains(name)){
+                return person;
+            }
+        }
+
+        return null;
+    }
+
+    private int generateRandomNumber() {
         Random random = new Random();
-        Integer random_value = random.nextInt(999);
+        int random_value = random.nextInt(999);
         while (staff.containsKey(random_value)) {
             random_value = random.nextInt(999);
         }

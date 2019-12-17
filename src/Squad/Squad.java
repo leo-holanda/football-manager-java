@@ -1,5 +1,6 @@
 package Squad;
 
+import Person.Person;
 import Player.*;
 import java.util.HashMap;
 import java.util.Random;
@@ -43,13 +44,25 @@ public class Squad implements Action<Player>{
         }
     }
 
+    @Override
     public Player get(int id) {
         return players.get(id);
     }
 
-    private Integer generateRandomNumber() {
+    @Override
+    public Person searchByName(String name) {
+        for (Person person : players.values()) {
+            if (person.getName().contains(name)){
+                return person;
+            }
+        }
+
+        return null;
+    }
+
+    private int generateRandomNumber() {
         Random random = new Random();
-        Integer random_value = random.nextInt(999);
+        int random_value = random.nextInt(999);
         while (players.containsKey(random_value)) {
             random_value = random.nextInt(999);
         }
