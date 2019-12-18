@@ -19,11 +19,11 @@ public class Transfer {
             person = transferList.get(i);
 
             if(person instanceof Player){
-                System.out.println("ID: " + i);
+                System.out.print("ID: " + i + " | ");
                 ((Player) person).showPlayer();
             }
             else if(person instanceof Staff){
-                System.out.println("ID: " + i);
+                System.out.print("ID: " + i + " | ");
                 ((Staff) person).showStaff();
             }
             else{
@@ -33,6 +33,10 @@ public class Transfer {
     }
 
     public void delete(int id){
-        transferList.remove(id);
+        try {
+            transferList.remove(id);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("ID invalido!");
+        }
     }
 }

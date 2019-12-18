@@ -80,4 +80,25 @@ public class Helper {
         Contract new_contract = new Contract(length,type,wage);
         return new Staff(name, age, new_contract, role, qualification);
     }
+
+    public static String readChoice(){
+        System.out.println("O alvo e um jogador ou staff? [J ou S]");
+        String choice;
+
+        while(true) {
+            try {
+                choice = reader.nextLine();
+
+                while(!choice.equals("J") && !choice.equals("S")){
+                    System.out.println("Entrada invalida! Digite novamente: ");
+                    choice = reader.nextLine();
+                }
+
+                return choice;
+            }catch (InputMismatchException e) {
+                System.out.print("Entrada invalida! Digite novamente: ");
+                reader.next();
+            }
+        }
+    }
 }

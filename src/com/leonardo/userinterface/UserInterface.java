@@ -6,14 +6,17 @@ import com.leonardo.squad.*;
 import com.leonardo.staff.*;
 import com.leonardo.backroom.*;
 import com.leonardo.helper.*;
+import com.leonardo.transfer.Transfer;
 
 public class UserInterface {
     private Squad squad;
     private Backroom backroom;
+    private Transfer transfer;
 
-    public UserInterface(Squad squad, Backroom backroom){
+    public UserInterface(Squad squad, Backroom backroom, Transfer transfer){
         this.squad = squad;
         this.backroom = backroom;
+        this.transfer = transfer;
     }
 
     public void start() {
@@ -24,7 +27,8 @@ public class UserInterface {
             System.out.println("1 - Menu do elenco");
             System.out.println("2 - Menu de staff");
             System.out.println("3 - Busca Rapida");
-            System.out.println("4 - Sair");
+            System.out.println("4 - Menu de Transferencias");
+            System.out.println("5 - Sair");
 
             switch(Helper.readIntInput("O que deseja?")) {
                 case 1:
@@ -37,6 +41,8 @@ public class UserInterface {
                     showQuickSearch();
                     break;
                 case 4:
+                    showTransfersMenu();
+                case 5:
                     return;
                 default:
                     System.out.println("Opcao invalida!");
@@ -214,5 +220,42 @@ public class UserInterface {
         }
 
         System.out.println("O nome nao foi encontrado!");
+    }
+
+    public void showTransfersMenu(){
+        while(true){
+            System.out.println("\n" + "Menu de Transferencia");
+            System.out.println("1 - Adicionar alvo de transferencia");
+            System.out.println("2 - Remover alvo de transferencia");
+            System.out.println("3 - Mostrar todos os alvos");
+            System.out.println("4 - Sair");
+
+            switch(Helper.readIntInput("O que deseja?")) {
+                case 1:
+                    String choice = Helper.readChoice();
+                    if(choice.equalsIgnoreCase("J")){
+                        Player new_player = Helper.readPlayerInput();
+                        transfer.add(new_player);
+                    }
+                    else if(choice.equalsIgnoreCase("S")){
+                        Staff new_staff = Helper.readStaffInput();
+                        transfer.add(new_staff);
+                    }
+                    else{
+                        System.out.println("Entrada invalida!");
+                    }
+                    break;
+                case 2:
+                    transfer.delete(Helper.readIntInput("Digite a ID do alvo de transferencia: "));
+                    break;
+                case 3:
+                    transfer.showAll();
+                    break;
+                case 4:
+                    return;
+                default:
+                    System.out.println("Opcao invalida!");
+            }
+        }
     }
 }
