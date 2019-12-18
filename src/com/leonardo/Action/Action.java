@@ -1,6 +1,6 @@
-package Action;
+package com.leonardo.Action;
 
-import Person.Person;
+import com.leonardo.Person.Person;
 
 public interface Action<T> {
     void add(T element);

@@ -1,10 +1,10 @@
-package Squad;
+package com.leonardo.Squad;
 
-import Person.Person;
-import Player.*;
+import com.leonardo.Person.Person;
+import com.leonardo.Player.*;
 import java.util.HashMap;
 import java.util.Random;
-import Action.*;
+import com.leonardo.Action.*;
 
 public class Squad implements Action<Player>{
     HashMap<Integer, Player> players = new HashMap<Integer, Player>();

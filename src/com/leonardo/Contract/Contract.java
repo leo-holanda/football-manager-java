@@ -1,4 +1,4 @@
-package Contract;
+package com.leonardo.Contract;
 
 public class Contract {
     private int length;

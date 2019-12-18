@@ -1,11 +1,11 @@
-package UserInterface;
+package com.leonardo.UserInterface;
 
-import Person.Person;
-import Player.*;
-import Squad.*;
-import Staff.*;
-import Backroom.*;
-import Helper.*;
+import com.leonardo.Person.Person;
+import com.leonardo.Player.*;
+import com.leonardo.Squad.*;
+import com.leonardo.Staff.*;
+import com.leonardo.Backroom.*;
+import com.leonardo.Helper.*;
 
 public class UserInterface {
     private Squad squad;
@@ -158,7 +158,7 @@ public class UserInterface {
 
     public void showStaffMenu(int id) {
         while(true){
-            System.out.println("\n" + "Menu de Staff");
+            System.out.println("\n" + "Menu de com.leonardo.Staff");
             System.out.println("1 - Editar nome");
             System.out.println("2 - Editar idade");
             System.out.println("3 - Editar funcao");

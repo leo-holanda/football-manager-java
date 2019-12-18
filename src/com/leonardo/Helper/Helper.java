@@ -1,8 +1,8 @@
-package Helper;
+package com.leonardo.Helper;
 
-import Contract.Contract;
-import Player.Player;
-import Staff.Staff;
+import com.leonardo.Contract.Contract;
+import com.leonardo.Player.Player;
+import com.leonardo.Staff.Staff;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

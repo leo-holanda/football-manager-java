@@ -1,10 +1,10 @@
-package Backroom;
+package com.leonardo.Backroom;
 
-import Person.Person;
-import Staff.*;
+import com.leonardo.Person.Person;
+import com.leonardo.Staff.*;
 import java.util.HashMap;
 import java.util.Random;
-import Action.*;
+import com.leonardo.Action.*;
 
 public class Backroom implements Action<Staff>{
     HashMap<Integer, Staff> staff = new HashMap<Integer, Staff>();

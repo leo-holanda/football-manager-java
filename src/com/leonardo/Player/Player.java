@@ -1,6 +1,6 @@
-package Player;
-import Contract.Contract;
-import Person.*;
+package com.leonardo.Player;
+import com.leonardo.Contract.Contract;
+import com.leonardo.Person.*;
 
 public class Player extends Person {
     private String position;

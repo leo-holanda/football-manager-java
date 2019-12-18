@@ -1,7 +1,7 @@
-package Staff;
+package com.leonardo.Staff;
 
-import Contract.Contract;
-import Person.*;
+import com.leonardo.Contract.Contract;
+import com.leonardo.Person.*;
 
 public class Staff extends Person {
     private String role;
