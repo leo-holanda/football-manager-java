@@ -1,7 +1,7 @@
 package com.leonardo;
-import com.leonardo.UserInterface.*;
-import com.leonardo.Squad.*;
-import com.leonardo.Backroom.*;
+import com.leonardo.userinterface.*;
+import com.leonardo.squad.*;
+import com.leonardo.backroom.*;
 
 public class Main {
 

@@ -1,6 +1,6 @@
-package com.leonardo.Person;
+package com.leonardo.person;
 
-import com.leonardo.Contract.*;
+import com.leonardo.contract.*;
 
 public class Person {
     protected String name;
