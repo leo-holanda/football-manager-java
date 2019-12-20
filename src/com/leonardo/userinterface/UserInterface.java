@@ -42,6 +42,7 @@ public class UserInterface {
                     break;
                 case 4:
                     showTransfersMenu();
+                    break;
                 case 5:
                     return;
                 default:
